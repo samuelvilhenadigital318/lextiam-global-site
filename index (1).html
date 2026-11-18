@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lextiam Global — Comércio Exterior, Importação e Exportação</title>
+<meta name="description" content="Lextiam Global: assessoria em comércio exterior, importação e exportação, consultoria aduaneira e fiscal. Itajaí/SC, atendimento nacional e internacional.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+  :root{
+    --navy:#0b2240; --navy2:#0f2a52; --navy3:#102c54; --gold:#d79a3c; --gold-lt:#e7b863;
+    --blue:#2f7dc4; --ink:#1b2a40; --muted:#5b6b85;
+  }
+  html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; max-width: 100%; }
+  body { margin: 0; font-family: 'Inter', system-ui, -apple-system, sans-serif; background: #f5f7fb; color: var(--ink); overflow-x: hidden; width: 100%; max-width: 100%; position: relative; }
+  a { color: inherit; text-decoration: none; }
+  a.lnk { color: var(--gold); }
+  a.lnk:hover { color: #b97f28; }
+  ::selection { background: var(--gold); color: #0b2240; }
+  img { max-width: 100%; display: block; }
+
+  .btn-primary { transition: background .15s ease, transform .15s ease, box-shadow .15s ease; }
+  .btn-primary:hover { background: #c78a2e; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(215,154,60,0.35); }
+  .btn-ghost { transition: background .15s ease, border-color .15s ease, transform .15s ease; }
+  .btn-ghost:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+  .navlink { transition: color .15s ease; position: relative; }
+  .navlink:hover { color: var(--gold); }
+  .card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(15,42,82,0.14); }
+
+  /* ---- glass ---- */
+  .glass {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+  .glass-light {
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    border: 1px solid rgba(255,255,255,0.6);
+  }
+
+  /* ---- scroll reveal ---- */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal-d1.in { transition-delay: .08s; }
+  .reveal-d2.in { transition-delay: .16s; }
+  .reveal-d3.in { transition-delay: .24s; }
+  .reveal-d4.in { transition-delay: .32s; }
+  .reveal-d5.in { transition-delay: .4s; }
+  .reveal-d6.in { transition-delay: .48s; }
+
+  /* ---- compass spin + glow ---- */
+  @keyframes spin360 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes spinNeedle { from { transform: rotate(0deg); } 50% { transform: rotate(185deg); } to { transform: rotate(360deg); } }
+  @keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(215,154,60,0.35), 0 30px 70px rgba(0,0,0,0.35); }
+    50% { box-shadow: 0 0 0 22px rgba(215,154,60,0), 0 30px 70px rgba(0,0,0,0.35); }
+  }
+  .compass-ring { transform-origin: 50px 50px; animation: spin360 26s linear infinite; }
+  .compass-needle { transform-origin: 50px 50px; animation: spinNeedle 9s ease-in-out infinite; }
+  .compass-wrap { animation: glowPulse 3.2s ease-in-out infinite; }
+
+  /* ---- ken burns bg ---- */
+  @keyframes kenburns { 0% { transform: scale(1) translate(0,0); } 100% { transform: scale(1.12) translate(-1%, -1%); } }
+  .kenburns { animation: kenburns 22s ease-in-out infinite alternate; }
+
+  /* ---- marquee ---- */
+  .marquee-track { display: flex; width: max-content; animation: marqueeScroll 32s linear infinite; }
+  @keyframes marqueeScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ---- floating particles on hero ---- */
+  @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+  .float1 { animation: floatY 6s ease-in-out infinite; }
+  .float2 { animation: floatY 7.5s ease-in-out infinite; animation-delay: .6s; }
+  .float3 { animation: floatY 5.2s ease-in-out infinite; animation-delay: 1.2s; }
+
+  /* ---- whatsapp floating button ---- */
+  @keyframes waPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.45), 0 10px 26px rgba(0,0,0,0.3); }
+    50% { box-shadow: 0 0 0 14px rgba(37,211,102,0), 0 10px 26px rgba(0,0,0,0.3); }
+  }
+  .wa-float {
+    position: fixed; right: 22px; bottom: 22px; z-index: 50;
+    width: 60px; height: 60px; border-radius: 999px;
+    background: #25D366; display: flex; align-items: center; justify-content: center;
+    animation: waPulse 2.6s ease-in-out infinite;
+    transition: transform .2s ease;
+  }
+  .wa-float:hover { transform: scale(1.08); }
+  .wa-inline {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    background: #25D366; color: #ffffff; font-weight: 700; font-size: 14.5px; white-space: nowrap;
+    padding: 14px 26px; border-radius: 999px; box-shadow: 0 10px 24px rgba(37,211,102,0.28);
+    transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  .wa-inline:hover { background: #1fb959; transform: translateY(-2px); box-shadow: 0 14px 30px rgba(37,211,102,0.38); }
+  .wa-cta-wrap { display: flex; justify-content: center; width: 100%; }
+  .wa-icon {
+    display: inline-block; flex-shrink: 0;
+    background-image: url("data:image/png;base64,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");
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .compass-ring, .compass-needle, .compass-wrap, .kenburns, .marquee-track, .float1, .float2, .float3, .wa-float { animation: none !important; }
+  }
+
+  @media (max-width: 860px) {
+    .nav-links { display: none !important; }
+    .hero-grid { grid-template-columns: 1fr !important; }
+    .hero-logo { order: -1; margin: 0 auto 8px; }
+    .stat-grid { grid-template-columns: 1fr 1fr !important; }
+    .svc-grid { grid-template-columns: 1fr !important; }
+    .diff-grid { grid-template-columns: 1fr !important; }
+    .future-grid { grid-template-columns: 1fr !important; }
+    .phase-grid { grid-template-columns: 1fr !important; }
+    .phase-arrow { transform: rotate(90deg); margin: 4px auto !important; }
+    .contact-grid { grid-template-columns: 1fr !important; }
+    .wa-float { width: 52px !important; height: 52px !important; right: 16px !important; bottom: 16px !important; }
+    .footer-grid { grid-template-columns: 1fr !important; text-align: center !important; }
+    .somos-photo-grid { grid-template-columns: 1fr !important; }
+  }
+
+  @media (max-width: 560px) {
+    h1 { font-size: 34px !important; }
+    h2 { font-size: 26px !important; }
+    section { padding-left: 18px !important; padding-right: 18px !important; }
+  }
+
+</style>
+</head>
+<body>
+<div style="width: 100%; min-width: 0; display: flex; flex-direction: column;">
+
+  <!-- NAV -->
+  <header class="glass" style="width: 100%; background: rgba(11,34,64,0.75); position: sticky; top: 0; z-index: 30; border-top: none; border-left: none; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+      <a href="#top" style="display: flex; align-items: center; gap: 10px;">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width: 36px; height: 36px; flex-shrink: 0;">
+          <circle class="compass-ring" cx="50" cy="50" r="46" fill="none" stroke="#d79a3c" stroke-width="3"/>
+          <circle cx="50" cy="50" r="34" fill="none" stroke="#ffffff" stroke-width="3"/>
+          <g class="compass-needle">
+            <path d="M50 8 L56 44 L50 50 L44 44 Z" fill="#d79a3c"/>
+            <path d="M50 92 L44 56 L50 50 L56 56 Z" fill="#d79a3c"/>
+            <path d="M8 50 L44 44 L50 50 L44 56 Z" fill="#2f7dc4"/>
+            <path d="M92 50 L56 56 L50 50 L56 44 Z" fill="#2f7dc4"/>
+          </g>
+          <circle cx="50" cy="50" r="6" fill="#ffffff"/>
+        </svg>
+        <span style="color: #ffffff; font-weight: 700; font-size: 17px; letter-spacing: 0.3px;">LEXTIAM GLOBAL</span>
+      </a>
+      <nav class="nav-links" style="display: flex; align-items: center; gap: 28px;">
+        <a class="navlink" href="#somos" style="color: #c9d4e6; font-size: 14px; font-weight: 500;">Quem Somos</a>
+        <a class="navlink" href="#servicos" style="color: #c9d4e6; font-size: 14px; font-weight: 500;">Serviços</a>
+        <a class="navlink" href="#diferenciais" style="color: #c9d4e6; font-size: 14px; font-weight: 500;">Diferenciais</a>
+        <a class="navlink" href="#futuro" style="color: #c9d4e6; font-size: 14px; font-weight: 500;">Futuro</a>
+      </nav>
+      <a href="#contato" class="btn-primary" style="background: #d79a3c; color: #0b2240; font-weight: 700; font-size: 14px; padding: 10px 20px; border-radius: 8px; white-space: nowrap;">Fale Conosco</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="width: 100%; position: relative; overflow: hidden; background: #0b2240;">
+    <img class="kenburns" src="https://commons.wikimedia.org/wiki/Special:FilePath/Container-Terminal_Bremerhaven_02.jpg?width=1600" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.55;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(11,34,64,0.92) 0%, rgba(16,44,84,0.88) 55%, rgba(14,39,72,0.93) 100%);"></div>
+    <div style="position: absolute; inset: 0; background: radial-gradient(circle at 85% 20%, rgba(215,154,60,0.18), transparent 55%);"></div>
+
+    <!-- floating accent dots -->
+    <div class="float1" style="position: absolute; top: 18%; left: 6%; width: 10px; height: 10px; border-radius: 50%; background: rgba(215,154,60,0.55); filter: blur(1px);"></div>
+    <div class="float2" style="position: absolute; top: 65%; left: 12%; width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.4);"></div>
+    <div class="float3" style="position: absolute; top: 38%; left: 48%; width: 8px; height: 8px; border-radius: 50%; background: rgba(47,125,196,0.5);"></div>
+
+    <div class="hero-grid" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 96px 24px 64px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center;">
+      <div class="reveal in" style="display: flex; flex-direction: column; gap: 22px; min-width: 0;">
+        <div class="glass" style="display: inline-flex; align-self: flex-start; align-items: center; border-radius: 999px; padding: 7px 16px; border-color: rgba(215,154,60,0.5);">
+          <span style="color: #e7b863; font-size: 12px; font-weight: 700; letter-spacing: 1.2px;">COMÉRCIO EXTERIOR &amp; ASSESSORIA ADUANEIRA</span>
+        </div>
+        <h1 style="margin: 0; color: #ffffff; font-size: 48px; line-height: 1.12; font-weight: 800; letter-spacing: -0.5px;">Conectando mercados,<br>encurtando distâncias.</h1>
+        <p style="margin: 0; color: #c9d4e6; font-size: 17px; line-height: 1.65; max-width: 540px;">Soluções estratégicas em comércio exterior, assessoria aduaneira e estruturação de operações internacionais — da prospecção do fornecedor ao desembaraço final.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px;">
+          <a href="https://wa.me/5547984668068" target="_blank" rel="noopener" class="btn-primary" style="background: #d79a3c; color: #0b2240; font-weight: 700; font-size: 15px; padding: 14px 26px; border-radius: 9px; display: inline-flex; align-items: center; gap: 8px;">
+            <span class="wa-icon" style="width: 18px; height: 18px;"></span>
+            Falar no WhatsApp
+          </a>
+          <a href="mailto:comercial.lextiamglb@outlook.com" class="btn-ghost glass" style="color: #ffffff; font-weight: 600; font-size: 15px; padding: 14px 26px; border-radius: 9px;">Enviar E-mail</a>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px;">
+          <span style="color: #8fa1c2; font-size: 12px; font-weight: 700; letter-spacing: 0.6px; border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; padding: 6px 14px;">COMÉRCIO INTERNACIONAL</span>
+          <span style="color: #8fa1c2; font-size: 12px; font-weight: 700; letter-spacing: 0.6px; border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; padding: 6px 14px;">IMPORTAÇÃO &amp; EXPORTAÇÃO</span>
+          <span style="color: #8fa1c2; font-size: 12px; font-weight: 700; letter-spacing: 0.6px; border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; padding: 6px 14px;">EXPANSÃO TRADING</span>
+        </div>
+      </div>
+      <div class="hero-logo reveal in" style="display: flex; justify-content: center;">
+        <div class="compass-wrap glass" style="width: 100%; max-width: 340px; aspect-ratio: 1; border-radius: 24px; display: flex; align-items: center; justify-content: center; border-color: rgba(215,154,60,0.35);">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width: 78%; height: 78%;">
+            <circle class="compass-ring" cx="50" cy="50" r="46" fill="none" stroke="#d79a3c" stroke-width="3"/>
+            <circle cx="50" cy="50" r="34" fill="none" stroke="#ffffff" stroke-width="3"/>
+            <g class="compass-needle">
+              <path d="M50 8 L56 44 L50 50 L44 44 Z" fill="#d79a3c"/>
+              <path d="M50 92 L44 56 L50 50 L56 56 Z" fill="#d79a3c"/>
+              <path d="M8 50 L44 44 L50 50 L44 56 Z" fill="#2f7dc4"/>
+              <path d="M92 50 L56 56 L50 50 L56 44 Z" fill="#2f7dc4"/>
+            </g>
+            <circle cx="50" cy="50" r="6" fill="#ffffff"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- marquee -->
+    <div class="glass" style="position: relative; border-left: none; border-right: none; border-bottom: none; padding: 14px 0; overflow: hidden; background: rgba(8,24,46,0.55);">
+      <div class="marquee-track">
+        <div style="display: flex; align-items: center; gap: 36px; padding-right: 36px;">
+          <span style="color: #e7b863; font-weight: 800; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">IMPORTAÇÃO</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+          <span style="color: #c9d4e6; font-weight: 700; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">EXPORTAÇÃO</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+          <span style="color: #e7b863; font-weight: 800; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">LOGÍSTICA INTERNACIONAL</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+          <span style="color: #c9d4e6; font-weight: 700; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">CONSULTORIA ADUANEIRA</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+          <span style="color: #e7b863; font-weight: 800; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">TRADING COMPANY</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 36px; padding-right: 36px;" aria-hidden="true">
+          <span style="color: #e7b863; font-weight: 800; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">IMPORTAÇÃO</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+          <span style="color: #c9d4e6; font-weight: 700; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">EXPORTAÇÃO</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+          <span style="color: #e7b863; font-weight: 800; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">LOGÍSTICA INTERNACIONAL</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+          <span style="color: #c9d4e6; font-weight: 700; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">CONSULTORIA ADUANEIRA</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+          <span style="color: #e7b863; font-weight: 800; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">TRADING COMPANY</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUEM SOMOS -->
+  <section id="somos" style="width: 100%; background: #f5f7fb; padding: 88px 24px;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div class="reveal" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 48px; max-width: 720px;">
+        <span style="color: #d79a3c; font-weight: 800; font-size: 13px; letter-spacing: 1.4px;">01 · QUEM SOMOS</span>
+        <h2 style="margin: 0; color: #0f2a52; font-size: 34px; font-weight: 800; letter-spacing: -0.3px;">Experiência prática, atendimento estratégico</h2>
+        <p style="margin: 0; color: #5b6b85; font-size: 16px; line-height: 1.6;">Experiência prática e atendimento estratégico para simplificar o comércio exterior.</p>
+      </div>
+
+      <div class="somos-photo-grid reveal" style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; margin-bottom: 40px; align-items: stretch;">
+        <div style="position: relative; border-radius: 18px; overflow: hidden; min-height: 260px;">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aerial_photograph_of_a_cargo_ship.jpg?width=1000" alt="Navio cargueiro em alto mar" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(11,34,64,0.75) 0%, rgba(11,34,64,0.05) 55%);"></div>
+          <div class="glass" style="position: absolute; left: 20px; bottom: 20px; right: 20px; border-radius: 12px; padding: 14px 18px;">
+            <p style="margin: 0; color: #ffffff; font-size: 14px; font-weight: 700; line-height: 1.5;">De porto a porto: acompanhamento real de cada etapa da carga.</p>
+          </div>
+        </div>
+        <div class="card glass" style="background: linear-gradient(145deg, #0f2a52, #16386b); border-radius: 18px; padding: 32px 28px; display: flex; flex-direction: column; justify-content: center; gap: 10px;">
+          <span style="color: #e7b863; font-size: 34px; font-weight: 800;">5+ ANOS</span>
+          <span style="color: #ffffff; font-size: 15px; font-weight: 700;">Experiência Comprovada</span>
+          <span style="color: #c9d4e6; font-size: 13.5px; line-height: 1.6;">Atuação prática no dia a dia de importação, exportação e rotinas aduaneiras.</span>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; align-items: stretch;">
+        <div class="card reveal" style="background: #ffffff; border: 1px solid #e3e8f0; border-radius: 16px; padding: 40px; display: flex; flex-direction: column; gap: 20px; box-shadow: 0 1px 2px rgba(15,42,82,0.04);">
+          <h3 style="margin: 0; color: #0f2a52; font-size: 21px; font-weight: 700;">Nossa História e Visão de Mercado</h3>
+          <p style="margin: 0; color: #46536b; font-size: 15.5px; line-height: 1.7;">A Lextiam Global nasceu da vivência real no comércio exterior e do propósito de tornar as operações internacionais mais acessíveis, seguras e eficientes para empresas de todos os portes.</p>
+          <p style="margin: 0; color: #46536b; font-size: 15.5px; line-height: 1.7;">Com 5 anos de experiência prática e estratégica no setor, compreendemos a fundo cada etapa da cadeia logística, aduaneira e comercial — entregando soluções desenhadas para a necessidade específica de cada cliente.</p>
+          <div style="border-left: 3px solid #d79a3c; background: #fbf2e2; border-radius: 0 10px 10px 0; padding: 18px 22px; margin-top: 4px;">
+            <p style="margin: 0; color: #0f2a52; font-size: 15px; font-weight: 700; line-height: 1.6; font-style: italic;">"Experiência de quem conhece as reais necessidades do seu negócio, unindo agilidade operacional e visão estratégica."</p>
+          </div>
+        </div>
+        <div class="stat-grid reveal reveal-d2" style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+          <div class="card" style="background: #ffffff; border: 1px solid #e3e8f0; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 6px;">
+            <span style="color: #2f7dc4; font-size: 30px; font-weight: 800;">100%</span>
+            <span style="color: #0f2a52; font-size: 14.5px; font-weight: 700;">Foco Sob Medida</span>
+            <span style="color: #5b6b85; font-size: 13.5px; line-height: 1.55;">Diagnóstico individual para cada operação, sem pacotes genéricos.</span>
+          </div>
+          <div class="card" style="background: #ffffff; border: 1px solid #e3e8f0; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 6px;">
+            <span style="color: #2f7dc4; font-size: 30px; font-weight: 800;">VISÃO 360°</span>
+            <span style="color: #0f2a52; font-size: 14.5px; font-weight: 700;">Da Estratégia à Entrega</span>
+            <span style="color: #5b6b85; font-size: 13.5px; line-height: 1.55;">Acompanhamento próximo desde a prospecção até o desembaraço final.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal wa-cta-wrap" style="margin-top: 36px;">
+        <a href="https://wa.me/5511977380480?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20entender%20melhor%20como%20a%20Lextiam%20Global%20pode%20me%20ajudar." target="_blank" rel="noopener" class="wa-inline">
+          <span class="wa-icon" style="width: 18px; height: 18px;"></span>
+          Conversar agora no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DE MEI A TRADING -->
+  <section style="width: 100%; position: relative; overflow: hidden; background: #0b2240; padding: 88px 24px;">
+    <img class="kenburns" src="https://commons.wikimedia.org/wiki/Special:FilePath/Modern_warehouse_with_pallet_rack_storage_system.jpg?width=1600" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(11,34,64,0.95) 0%, rgba(14,39,72,0.92) 55%, rgba(11,34,64,0.95) 100%);"></div>
+    <div style="position: relative; max-width: 1180px; margin: 0 auto;">
+      <div class="reveal" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 48px; max-width: 720px;">
+        <span style="color: #e7b863; font-weight: 800; font-size: 13px; letter-spacing: 1.4px;">02 · VISÃO DE CRESCIMENTO</span>
+        <h2 style="margin: 0; color: #ffffff; font-size: 34px; font-weight: 800; letter-spacing: -0.3px;">De MEI a Trading: Nosso Projeto de Expansão</h2>
+        <p style="margin: 0; color: #a9bad9; font-size: 16px; line-height: 1.6;">Uma trajetória estruturada com transparência, solidez e foco no crescimento conjunto.</p>
+      </div>
+      <div class="phase-grid reveal" style="display: grid; grid-template-columns: 1fr 64px 1fr; gap: 0; align-items: center;">
+        <div class="card" style="background: #f5f7fb; border: 1px solid #e3e8f0; border-radius: 14px; overflow: hidden; height: 100%;">
+          <div style="background: #2f7dc4; padding: 14px 22px;"><span style="color: #ffffff; font-size: 13px; font-weight: 800; letter-spacing: 0.4px;">FASE 1 — MOMENTO ATUAL</span></div>
+          <div style="padding: 26px 24px; display: flex; flex-direction: column; gap: 14px;">
+            <h3 style="margin: 0; color: #0f2a52; font-size: 19px; font-weight: 700;">Estruturação e Serviços Especializados</h3>
+            <ul style="margin: 0; padding-left: 18px; color: #46536b; font-size: 14.5px; line-height: 1.75;">
+              <li>Atuação ágil e enxuta como MEI, com atendimento direto do especialista.</li>
+              <li>Serviços pontuais e recorrentes de apoio em comércio exterior.</li>
+              <li>Consultoria técnica, prospecção internacional e estudos de viabilidade.</li>
+              <li>Construção de relacionamento sólido e validação das demandas reais dos clientes.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="phase-arrow" style="display: flex; align-items: center; justify-content: center; color: #d79a3c;">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="#d79a3c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="card" style="background: #0f2a52; border-radius: 14px; overflow: hidden; height: 100%;">
+          <div style="background: #d79a3c; padding: 14px 22px;"><span style="color: #0b2240; font-size: 13px; font-weight: 800; letter-spacing: 0.4px;">FASE 2 — PROJETO DE EXPANSÃO</span></div>
+          <div style="padding: 26px 24px; display: flex; flex-direction: column; gap: 14px;">
+            <h3 style="margin: 0; color: #ffffff; font-size: 19px; font-weight: 700;">Consolidação como Trading de Referência</h3>
+            <ul style="margin: 0; padding-left: 18px; color: #c9d4e6; font-size: 14.5px; line-height: 1.75;">
+              <li>Evolução societária e estrutural para operação plena como Trading Company.</li>
+              <li>Importação por Conta e Ordem de Terceiros e por Encomenda.</li>
+              <li>Operações completas de exportação, financiamento e inteligência comercial.</li>
+              <li>Capacidade ampliada para escalar os negócios dos parceiros.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2 glass" style="margin-top: 28px; border-left: 4px solid #d79a3c; border-radius: 12px; padding: 20px 26px; text-align: center;">
+        <p style="margin: 0; color: #e7b863; font-size: 15px; font-weight: 700; line-height: 1.6;">Crescemos junto com nossos clientes: a agilidade e proximidade de hoje preparam o terreno para uma Trading completa, segura e preparada para grandes volumes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" style="width: 100%; background: #f5f7fb; padding: 88px 24px;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div class="reveal" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 48px; max-width: 720px;">
+        <span style="color: #d79a3c; font-weight: 800; font-size: 13px; letter-spacing: 1.4px;">03 · PORTFÓLIO DE SOLUÇÕES</span>
+        <h2 style="margin: 0; color: #0f2a52; font-size: 34px; font-weight: 800; letter-spacing: -0.3px;">O Que Fazemos: Soluções Sob Medida</h2>
+        <p style="margin: 0; color: #5b6b85; font-size: 16px; line-height: 1.6;">Suporte completo em cada etapa da cadeia internacional, adaptado à realidade da sua empresa.</p>
+      </div>
+      <div class="svc-grid reveal" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px;">
+        <div class="card" style="background: #ffffff; border-radius: 14px; border-top: 4px solid #0f2a52; padding: 28px 26px; display: flex; flex-direction: column; gap: 12px;">
+          <span style="background: #f1e4cf; color: #8a5f1c; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 6px; align-self: flex-start;">01</span>
+          <h3 style="margin: 0; color: #0f2a52; font-size: 17.5px; font-weight: 700; line-height: 1.3;">Assessoria em Importação e Exportação</h3>
+          <p style="margin: 0; color: #5b6b85; font-size: 14.5px; line-height: 1.6;">Planejamento operacional, análise documental e acompanhamento ponta a ponta de todas as etapas do processo internacional.</p>
+        </div>
+        <div class="card" style="background: #ffffff; border-radius: 14px; border-top: 4px solid #d79a3c; padding: 28px 26px; display: flex; flex-direction: column; gap: 12px;">
+          <span style="background: #f1e4cf; color: #8a5f1c; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 6px; align-self: flex-start;">02</span>
+          <h3 style="margin: 0; color: #0f2a52; font-size: 17.5px; font-weight: 700; line-height: 1.3;">Prospecção de Fornecedores e Parceiros</h3>
+          <p style="margin: 0; color: #5b6b85; font-size: 14.5px; line-height: 1.6;">Busca ativa, homologação e negociação com fornecedores e compradores globais confiáveis para reduzir riscos.</p>
+        </div>
+        <div class="card" style="background: #ffffff; border-radius: 14px; border-top: 4px solid #0f2a52; padding: 28px 26px; display: flex; flex-direction: column; gap: 12px;">
+          <span style="background: #f1e4cf; color: #8a5f1c; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 6px; align-self: flex-start;">03</span>
+          <h3 style="margin: 0; color: #0f2a52; font-size: 17.5px; font-weight: 700; line-height: 1.3;">Estudo de Viabilidade Econômica</h3>
+          <p style="margin: 0; color: #5b6b85; font-size: 14.5px; line-height: 1.6;">Simulação detalhada de custos tributários, logísticos e cambiais para garantir previsibilidade e margem de lucro.</p>
+        </div>
+        <div class="card" style="background: #ffffff; border-radius: 14px; border-top: 4px solid #2f7dc4; padding: 28px 26px; display: flex; flex-direction: column; gap: 12px;">
+          <span style="background: #f1e4cf; color: #8a5f1c; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 6px; align-self: flex-start;">04</span>
+          <h3 style="margin: 0; color: #0f2a52; font-size: 17.5px; font-weight: 700; line-height: 1.3;">Coordenação Logística Internacional</h3>
+          <p style="margin: 0; color: #5b6b85; font-size: 14.5px; line-height: 1.6;">Gestão de fretes marítimos, aéreos e rodoviários, contratação de seguro e monitoramento de cargas até o destino.</p>
+        </div>
+        <div class="card" style="background: #ffffff; border-radius: 14px; border-top: 4px solid #0f2a52; padding: 28px 26px; display: flex; flex-direction: column; gap: 12px;">
+          <span style="background: #f1e4cf; color: #8a5f1c; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 6px; align-self: flex-start;">05</span>
+          <h3 style="margin: 0; color: #0f2a52; font-size: 17.5px; font-weight: 700; line-height: 1.3;">Consultoria Aduaneira e Fiscal</h3>
+          <p style="margin: 0; color: #5b6b85; font-size: 14.5px; line-height: 1.6;">Classificação fiscal (NCM), adequação às normas regulatórias e identificação de benefícios para otimização tributária.</p>
+        </div>
+        <div class="card" style="background: #ffffff; border-radius: 14px; border-top: 4px solid #d79a3c; padding: 28px 26px; display: flex; flex-direction: column; gap: 12px;">
+          <span style="background: #f1e4cf; color: #8a5f1c; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 6px; align-self: flex-start;">06</span>
+          <h3 style="margin: 0; color: #0f2a52; font-size: 17.5px; font-weight: 700; line-height: 1.3;">Cadastro no Catálogo do Portal Único</h3>
+          <p style="margin: 0; color: #5b6b85; font-size: 14.5px; line-height: 1.6;">Com a obrigatoriedade da DUIMP a partir de dezembro, sua empresa precisa estar preparada para as novas exigências. Oferecemos suporte para o cadastro de produtos no Catálogo do Portal Único e treinamentos personalizados para capacitar sua equipe nessa transição.</p>
+        </div>
+        <div class="card" style="position: relative; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; justify-content: center; min-height: 200px;">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/2017_Paul_D._Conley_Container_Terminal_container_cranes_from_Boston_Harbor_1.jpg?width=900" alt="Terminal de contêineres" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(160deg, rgba(15,42,82,0.92), rgba(15,42,82,0.75));"></div>
+          <div class="glass" style="position: relative; margin: 20px; border-radius: 10px; padding: 20px 22px; display: flex; flex-direction: column; gap: 10px;">
+            <h3 style="margin: 0; color: #ffffff; font-size: 17.5px; font-weight: 700; line-height: 1.3;">Precisa de algo sob medida?</h3>
+            <p style="margin: 0; color: #e3e9f5; font-size: 14.5px; line-height: 1.6;">Fale com a gente e desenhamos a solução certa para a sua operação.</p>
+            <a href="https://wa.me/5511977380480?text=Ol%C3%A1%2C%20preciso%20de%20uma%20solu%C3%A7%C3%A3o%20sob%20medida%20em%20com%C3%A9rcio%20exterior." target="_blank" rel="noopener" style="margin-top: 2px; color: #e7b863; font-weight: 700; font-size: 14.5px; display: inline-flex; align-items: center; gap: 6px;">Falar no WhatsApp →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section id="diferenciais" style="width: 100%; background: #ffffff; padding: 88px 24px; border-top: 1px solid #e3e8f0;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div class="reveal" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 48px; max-width: 760px;">
+        <span style="color: #d79a3c; font-weight: 800; font-size: 13px; letter-spacing: 1.4px;">04 · PROPOSTA DE VALOR</span>
+        <h2 style="margin: 0; color: #0f2a52; font-size: 34px; font-weight: 800; letter-spacing: -0.3px;">Por Que Escolher a Lextiam Global?</h2>
+        <p style="margin: 0; color: #5b6b85; font-size: 16px; line-height: 1.6;">Diferenciais competitivos que transformam complexidade aduaneira em vantagem para o seu negócio.</p>
+      </div>
+      <div class="diff-grid reveal" style="display: grid; grid-template-columns: 0.9fr 1.4fr; gap: 28px; align-items: stretch;">
+        <div style="position: relative; overflow: hidden; border-radius: 16px; padding: 40px 34px; display: flex; flex-direction: column; gap: 18px; justify-content: center; min-height: 340px;">
+          <img class="kenburns" src="https://commons.wikimedia.org/wiki/Special:FilePath/Container-Terminal_Bremerhaven_02.jpg?width=900" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(160deg, rgba(15,42,82,0.94), rgba(11,34,64,0.88));"></div>
+          <h3 style="position: relative; margin: 0; color: #ffffff; font-size: 24px; font-weight: 800; line-height: 1.25;">Compromisso com Resultado</h3>
+          <p style="position: relative; margin: 0; color: #c9d4e6; font-size: 15px; line-height: 1.7;">No comércio exterior, um detalhe documental ou tributário define o sucesso da operação. Na Lextiam Global, você conta com acompanhamento próximo de quem já resolveu desafios reais na linha de frente.</p>
+          <div class="glass" style="position: relative; border-color: rgba(215,154,60,0.4); border-radius: 10px; padding: 16px 18px; margin-top: 6px;">
+            <p style="margin: 0; color: #e7b863; font-size: 14.5px; font-weight: 700; line-height: 1.5;">Mais previsibilidade, menos riscos e total transparência em cada etapa.</p>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div class="card" style="background: #f5f7fb; border: 1px solid #e3e8f0; border-left: 4px solid #d79a3c; border-radius: 10px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start;">
+            <div style="width: 26px; height: 26px; border-radius: 999px; background: #0f2a52; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#e7b863" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4 style="margin: 0 0 4px; color: #0f2a52; font-size: 15.5px; font-weight: 700;">5 Anos de Experiência Prática</h4><p style="margin: 0; color: #5b6b85; font-size: 14px; line-height: 1.55;">Bagagem sólida na rotina operacional do comércio exterior, antecipando gargalos antes que gerem custos extras.</p></div>
+          </div>
+          <div class="card" style="background: #f5f7fb; border: 1px solid #e3e8f0; border-left: 4px solid #2f7dc4; border-radius: 10px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start;">
+            <div style="width: 26px; height: 26px; border-radius: 999px; background: #0f2a52; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#e7b863" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4 style="margin: 0 0 4px; color: #0f2a52; font-size: 15.5px; font-weight: 700;">Atendimento Realmente Customizado</h4><p style="margin: 0; color: #5b6b85; font-size: 14px; line-height: 1.55;">Escuta ativa para entender o modelo de negócio de cada cliente, desenhando fluxos sob medida sem soluções engessadas.</p></div>
+          </div>
+          <div class="card" style="background: #f5f7fb; border: 1px solid #e3e8f0; border-left: 4px solid #d79a3c; border-radius: 10px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start;">
+            <div style="width: 26px; height: 26px; border-radius: 999px; background: #0f2a52; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#e7b863" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4 style="margin: 0 0 4px; color: #0f2a52; font-size: 15.5px; font-weight: 700;">Agilidade e Redução de Custos</h4><p style="margin: 0; color: #5b6b85; font-size: 14px; line-height: 1.55;">Estrutura enxuta e processos diretos que eliminam burocracias desnecessárias, economizando tempo e recursos.</p></div>
+          </div>
+          <div class="card" style="background: #f5f7fb; border: 1px solid #e3e8f0; border-left: 4px solid #2f7dc4; border-radius: 10px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start;">
+            <div style="width: 26px; height: 26px; border-radius: 999px; background: #0f2a52; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#e7b863" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4 style="margin: 0 0 4px; color: #0f2a52; font-size: 15.5px; font-weight: 700;">Segurança Jurídica e Conformidade</h4><p style="margin: 0; color: #5b6b85; font-size: 14px; line-height: 1.55;">Rigor técnico na análise documental e tributária, garantindo operações 100% aderentes à legislação vigente.</p></div>
+          </div>
+          <div class="card" style="background: #f5f7fb; border: 1px solid #e3e8f0; border-left: 4px solid #d79a3c; border-radius: 10px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start;">
+            <div style="width: 26px; height: 26px; border-radius: 999px; background: #0f2a52; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#e7b863" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4 style="margin: 0 0 4px; color: #0f2a52; font-size: 15.5px; font-weight: 700;">Visão de Parceria de Longo Prazo</h4><p style="margin: 0; color: #5b6b85; font-size: 14px; line-height: 1.55;">Atuamos como o braço internacional da sua empresa, comprometidos com o resultado sustentável de cada embarque.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal wa-cta-wrap" style="margin-top: 36px;">
+        <a href="https://wa.me/5511977380480?text=Ol%C3%A1%2C%20vi%20os%20diferenciais%20da%20Lextiam%20Global%20no%20site%20e%20quero%20conversar." target="_blank" rel="noopener" class="wa-inline">
+          <span class="wa-icon" style="width: 18px; height: 18px;"></span>
+          Falar com um especialista
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUTURO -->
+  <section id="futuro" style="width: 100%; position: relative; overflow: hidden; background: #0b2240; padding: 88px 24px;">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/MOL_Majesty_%28ship%2C_2009%29_001.jpg?width=1600" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(11,34,64,0.95) 0%, rgba(14,39,72,0.9) 100%);"></div>
+    <div style="position: relative; max-width: 1180px; margin: 0 auto;">
+      <div class="reveal" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; max-width: 720px;">
+        <span style="color: #e7b863; font-weight: 800; font-size: 13px; letter-spacing: 1.4px;">05 · PROPÓSITO E FUTURO</span>
+        <h2 style="margin: 0; color: #ffffff; font-size: 34px; font-weight: 800; letter-spacing: -0.3px;">Nosso Compromisso com o Futuro</h2>
+        <p style="margin: 0; color: #a9bad9; font-size: 16px; line-height: 1.6;">Construindo hoje a ponte sólida que conectará sua empresa aos principais mercados globais.</p>
+      </div>
+      <div class="glass reveal reveal-d1" style="border-left: 4px solid #d79a3c; border-radius: 14px; padding: 34px 38px; margin-bottom: 28px;">
+        <h3 style="margin: 0 0 14px; color: #e7b863; font-size: 19px; font-weight: 800;">Rumo ao Mercado Global</h3>
+        <p style="margin: 0; color: #c9d4e6; font-size: 15.5px; line-height: 1.75;">Acreditamos que o comércio internacional deve ser acessível, transparente e descomplicado. Estamos estruturando a Lextiam Global para ser a sua ponte definitiva com o mundo — unindo a agilidade e atenção personalizada de hoje com a robustez operacional de uma futura grande Trading Company.</p>
+      </div>
+      <div class="future-grid reveal reveal-d2" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-bottom: 28px;">
+        <div class="glass card" style="border-radius: 12px; padding: 24px 24px;">
+          <span style="color: #d79a3c; font-size: 12px; font-weight: 800; letter-spacing: 0.8px;">ACESSIBILIDADE</span>
+          <h4 style="margin: 10px 0 8px; color: #ffffff; font-size: 16.5px; font-weight: 700;">Descomplicar Processos</h4>
+          <p style="margin: 0; color: #a9bad9; font-size: 14px; line-height: 1.6;">Traduzir a complexidade aduaneira e logística em decisões claras e seguras para o empresário.</p>
+        </div>
+        <div class="glass card" style="border-radius: 12px; padding: 24px 24px;">
+          <span style="color: #d79a3c; font-size: 12px; font-weight: 800; letter-spacing: 0.8px;">CONFIANÇA</span>
+          <h4 style="margin: 10px 0 8px; color: #ffffff; font-size: 16.5px; font-weight: 700;">Relações Transparentes</h4>
+          <p style="margin: 0; color: #a9bad9; font-size: 14px; line-height: 1.6;">Clareza total sobre custos, prazos e etapas desde o primeiro contato até a conclusão da operação.</p>
+        </div>
+        <div class="glass card" style="border-radius: 12px; padding: 24px 24px;">
+          <span style="color: #d79a3c; font-size: 12px; font-weight: 800; letter-spacing: 0.8px;">ESCALABILIDADE</span>
+          <h4 style="margin: 10px 0 8px; color: #ffffff; font-size: 16.5px; font-weight: 700;">Crescimento Sustentável</h4>
+          <p style="margin: 0; color: #a9bad9; font-size: 14px; line-height: 1.6;">Evoluir continuamente nossa estrutura para atender demandas crescentes em importação e exportação.</p>
+        </div>
+      </div>
+      <div class="glass reveal reveal-d3" style="text-align: center; padding: 22px; border-radius: 12px;">
+        <p style="margin: 0; color: #e7b863; font-size: 17px; font-weight: 700; font-style: italic;">"Onde há um mercado a ser explorado, a Lextiam Global abre o caminho."</p>
+      </div>
+      <div class="reveal reveal-d4 wa-cta-wrap" style="margin-top: 32px;">
+        <a href="https://wa.me/5511977380480?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20futuro%20e%20as%20solu%C3%A7%C3%B5es%20da%20Lextiam%20Global." target="_blank" rel="noopener" class="wa-inline">
+          <span class="wa-icon" style="width: 18px; height: 18px;"></span>
+          Quero fazer parte dessa jornada
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" style="width: 100%; background: #f5f7fb; padding: 88px 24px;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div class="contact-grid reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <span style="color: #d79a3c; font-weight: 800; font-size: 13px; letter-spacing: 1.4px;">PRÓXIMO PASSO</span>
+          <h2 style="margin: 0; color: #0f2a52; font-size: 36px; font-weight: 800; line-height: 1.2; letter-spacing: -0.3px;">Vamos Conectar o Seu Negócio ao Mundo?</h2>
+          <p style="margin: 0; color: #5b6b85; font-size: 16px; line-height: 1.65; max-width: 460px;">Entre em contato para conversarmos sobre as necessidades da sua operação e desenharmos a melhor solução.</p>
+        </div>
+        <div class="card" style="background: #ffffff; border: 1px solid #e3e8f0; border-radius: 16px; padding: 36px 38px; display: flex; flex-direction: column; gap: 20px;">
+          <div>
+            <span style="color: #d79a3c; font-size: 11.5px; font-weight: 800; letter-spacing: 0.8px;">RESPONSÁVEL</span>
+            <p style="margin: 4px 0 0; color: #0f2a52; font-size: 15.5px; font-weight: 700;">Letícia Souza e William Alves</p>
+            <p style="margin: 2px 0 0; color: #5b6b85; font-size: 13.5px;">Fundadores &amp; Especialistas em Comércio Exterior</p>
+          </div>
+          <div style="height: 1px; background: #e3e8f0;"></div>
+          <div>
+            <span style="color: #d79a3c; font-size: 11.5px; font-weight: 800; letter-spacing: 0.8px;">E-MAIL CORPORATIVO</span>
+            <p style="margin: 4px 0 0;"><a class="lnk" href="mailto:comercial.lextiamglb@outlook.com" style="font-size: 15.5px; font-weight: 700;">comercial.lextiamglb@outlook.com</a></p>
+          </div>
+          <div style="height: 1px; background: #e3e8f0;"></div>
+          <div>
+            <span style="color: #d79a3c; font-size: 11.5px; font-weight: 800; letter-spacing: 0.8px;">TELEFONE / WHATSAPP</span>
+            <p style="margin: 4px 0 0;"><a class="lnk" href="https://wa.me/5547984668068" target="_blank" rel="noopener" style="font-size: 15.5px; font-weight: 700;">+55 (47) 98466-8068</a></p>
+          </div>
+          <div style="height: 1px; background: #e3e8f0;"></div>
+          <div>
+            <span style="color: #d79a3c; font-size: 11.5px; font-weight: 800; letter-spacing: 0.8px;">LOCALIZAÇÃO &amp; ATUAÇÃO</span>
+            <p style="margin: 4px 0 0; color: #0f2a52; font-size: 15px; font-weight: 700; line-height: 1.5;">Itajaí / SC · Atendimento Nacional e Internacional<br><span style="color: #5b6b85; font-weight: 500;">Rua Uruguai, 122, Sala 03, Box 250 - Centro.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="width: 100%; background: #0b2240; padding: 36px 24px;">
+    <div class="footer-grid" style="max-width: 1180px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width: 30px; height: 30px; flex-shrink: 0;">
+          <circle cx="50" cy="50" r="46" fill="none" stroke="#d79a3c" stroke-width="3"/>
+          <circle cx="50" cy="50" r="34" fill="none" stroke="#ffffff" stroke-width="3"/>
+          <path d="M50 8 L56 44 L50 50 L44 44 Z" fill="#d79a3c"/>
+          <path d="M50 92 L44 56 L50 50 L56 56 Z" fill="#d79a3c"/>
+          <path d="M8 50 L44 44 L50 50 L44 56 Z" fill="#2f7dc4"/>
+          <path d="M92 50 L56 56 L50 50 L56 44 Z" fill="#2f7dc4"/>
+          <circle cx="50" cy="50" r="6" fill="#ffffff"/>
+        </svg>
+        <span style="color: #c9d4e6; font-size: 13.5px;">Lextiam Global — Conectando mercados, encurtando distâncias.</span>
+      </div>
+      <span style="color: #6b7f9f; font-size: 12.5px;">Itajaí / SC · Comércio Exterior, Assessoria Aduaneira e Trading</span>
+    </div>
+  </footer>
+
+</div>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/5511977380480?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Lextiam%20Global%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" class="wa-float" aria-label="Falar no WhatsApp">
+  <span class="wa-icon" style="width: 30px; height: 30px;"></span>
+</a>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal:not(.in)');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
