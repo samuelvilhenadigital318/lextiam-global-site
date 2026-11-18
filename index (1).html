@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lextiam Global — Comércio Exterior, Importação e Exportação</title>
+<meta name="description" content="Lextiam Global: assessoria em comércio exterior, importação e exportação, consultoria aduaneira e fiscal. Itajaí/SC, atendimento nacional e internacional.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+  :root{
+    --navy:#0b2240; --navy2:#0f2a52; --navy3:#102c54; --gold:#d79a3c; --gold-lt:#e7b863;
+    --blue:#2f7dc4; --ink:#1b2a40; --muted:#5b6b85;
+  }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: 'Inter', system-ui, -apple-system, sans-serif; background: #f5f7fb; color: var(--ink); overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  a.lnk { color: var(--gold); }
+  a.lnk:hover { color: #b97f28; }
+  ::selection { background: var(--gold); color: #0b2240; }
+  img { max-width: 100%; display: block; }
+
+  .btn-primary { transition: background .15s ease, transform .15s ease, box-shadow .15s ease; }
+  .btn-primary:hover { background: #c78a2e; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(215,154,60,0.35); }
+  .btn-ghost { transition: background .15s ease, border-color .15s ease, transform .15s ease; }
+  .btn-ghost:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+  .navlink { transition: color .15s ease; position: relative; }
+  .navlink:hover { color: var(--gold); }
+  .card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(15,42,82,0.14); }
+
+  /* ---- glass ---- */
+  .glass {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+  .glass-light {
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    border: 1px solid rgba(255,255,255,0.6);
+  }
+
+  /* ---- scroll reveal ---- */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal-d1.in { transition-delay: .08s; }
+  .reveal-d2.in { transition-delay: .16s; }
+  .reveal-d3.in { transition-delay: .24s; }
+  .reveal-d4.in { transition-delay: .32s; }
+  .reveal-d5.in { transition-delay: .4s; }
+  .reveal-d6.in { transition-delay: .48s; }
+
+  /* ---- compass spin + glow ---- */
+  @keyframes spin360 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes spinNeedle { from { transform: rotate(0deg); } 50% { transform: rotate(185deg); } to { transform: rotate(360deg); } }
+  @keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(215,154,60,0.35), 0 30px 70px rgba(0,0,0,0.35); }
+    50% { box-shadow: 0 0 0 22px rgba(215,154,60,0), 0 30px 70px rgba(0,0,0,0.35); }
+  }
+  .compass-ring { transform-origin: 50px 50px; animation: spin360 26s linear infinite; }
+  .compass-needle { transform-origin: 50px 50px; animation: spinNeedle 9s ease-in-out infinite; }
+  .compass-wrap { animation: glowPulse 3.2s ease-in-out infinite; }
+
+  /* ---- ken burns bg ---- */
+  @keyframes kenburns { 0% { transform: scale(1) translate(0,0); } 100% { transform: scale(1.12) translate(-1%, -1%); } }
+  .kenburns { animation: kenburns 22s ease-in-out infinite alternate; }
+
+  /* ---- marquee ---- */
+  .marquee-track { display: flex; width: max-content; animation: marqueeScroll 32s linear infinite; }
+  @keyframes marqueeScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ---- floating particles on hero ---- */
+  @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+  .float1 { animation: floatY 6s ease-in-out infinite; }
+  .float2 { animation: floatY 7.5s ease-in-out infinite; animation-delay: .6s; }
+  .float3 { animation: floatY 5.2s ease-in-out infinite; animation-delay: 1.2s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .compass-ring, .compass-needle, .compass-wrap, .kenburns, .marquee-track, .float1, .float2, .float3 { animation: none !important; }
+  }
+
+  @media (max-width: 860px) {
+    .nav-links { display: none !important; }
+    .hero-grid { grid-template-columns: 1fr !important; }
+    .hero-logo { order: -1; margin: 0 auto 8px; }
+    .stat-grid { grid-template-columns: 1fr 1fr !important; }
+    .svc-grid { grid-template-columns: 1fr !important; }
+    .diff-grid { grid-template-columns: 1fr !important; }
+    .future-grid { grid-template-columns: 1fr !important; }
+    .phase-grid { grid-template-columns: 1fr !important; }
+    .phase-arrow { transform: rotate(90deg); margin: 4px auto !important; }
+    .contact-grid { grid-template-columns: 1fr !important; }
+    .footer-grid { grid-template-columns: 1fr !important; text-align: center !important; }
+    .somos-photo-grid { grid-template-columns: 1fr !important; }
+  }
+
+</style>
+</head>
+<body>
+<div style="width: 100%; min-width: 0; display: flex; flex-direction: column;">
+
+  <!-- NAV -->
+  <header class="glass" style="width: 100%; background: rgba(11,34,64,0.75); position: sticky; top: 0; z-index: 30; border-top: none; border-left: none; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+      <a href="#top" style="display: flex; align-items: center; gap: 10px;">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width: 36px; height: 36px; flex-shrink: 0;">
+          <circle class="compass-ring" cx="50" cy="50" r="46" fill="none" stroke="#d79a3c" stroke-width="3"/>
+          <circle cx="50" cy="50" r="34" fill="none" stroke="#ffffff" stroke-width="3"/>
+          <g class="compass-needle">
+            <path d="M50 8 L56 44 L50 50 L44 44 Z" fill="#d79a3c"/>
+            <path d="M50 92 L44 56 L50 50 L56 56 Z" fill="#d79a3c"/>
+            <path d="M8 50 L44 44 L50 50 L44 56 Z" fill="#2f7dc4"/>
+            <path d="M92 50 L56 56 L50 50 L56 44 Z" fill="#2f7dc4"/>
+          </g>
+          <circle cx="50" cy="50" r="6" fill="#ffffff"/>
+        </svg>
+        <span style="color: #ffffff; font-weight: 700; font-size: 17px; letter-spacing: 0.3px;">LEXTIAM GLOBAL</span>
+      </a>
+      <nav class="nav-links" style="display: flex; align-items: center; gap: 28px;">
+        <a class="navlink" href="#somos" style="color: #c9d4e6; font-size: 14px; font-weight: 500;">Quem Somos</a>
+        <a class="navlink" href="#servicos" style="color: #c9d4e6; font-size: 14px; font-weight: 500;">Serviços</a>
+        <a class="navlink" href="#diferenciais" style="color: #c9d4e6; font-size: 14px; font-weight: 500;">Diferenciais</a>
+        <a class="navlink" href="#futuro" style="color: #c9d4e6; font-size: 14px; font-weight: 500;">Futuro</a>
+      </nav>
+      <a href="#contato" class="btn-primary" style="background: #d79a3c; color: #0b2240; font-weight: 700; font-size: 14px; padding: 10px 20px; border-radius: 8px; white-space: nowrap;">Fale Conosco</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="width: 100%; position: relative; overflow: hidden; background: #0b2240;">
+    <img class="kenburns" src="https://commons.wikimedia.org/wiki/Special:FilePath/Container-Terminal_Bremerhaven_02.jpg?width=1600" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.55;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(11,34,64,0.92) 0%, rgba(16,44,84,0.88) 55%, rgba(14,39,72,0.93) 100%);"></div>
+    <div style="position: absolute; inset: 0; background: radial-gradient(circle at 85% 20%, rgba(215,154,60,0.18), transparent 55%);"></div>
+
+    <!-- floating accent dots -->
+    <div class="float1" style="position: absolute; top: 18%; left: 6%; width: 10px; height: 10px; border-radius: 50%; background: rgba(215,154,60,0.55); filter: blur(1px);"></div>
+    <div class="float2" style="position: absolute; top: 65%; left: 12%; width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.4);"></div>
+    <div class="float3" style="position: absolute; top: 38%; left: 48%; width: 8px; height: 8px; border-radius: 50%; background: rgba(47,125,196,0.5);"></div>
+
+    <div class="hero-grid" style="position: relative; max-width: 1180px; margin: 0 auto; padding: 96px 24px 64px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center;">
+      <div class="reveal in" style="display: flex; flex-direction: column; gap: 22px; min-width: 0;">
+        <div class="glass" style="display: inline-flex; align-self: flex-start; align-items: center; border-radius: 999px; padding: 7px 16px; border-color: rgba(215,154,60,0.5);">
+          <span style="color: #e7b863; font-size: 12px; font-weight: 700; letter-spacing: 1.2px;">COMÉRCIO EXTERIOR &amp; ASSESSORIA ADUANEIRA</span>
+        </div>
+        <h1 style="margin: 0; color: #ffffff; font-size: 48px; line-height: 1.12; font-weight: 800; letter-spacing: -0.5px;">Conectando mercados,<br>encurtando distâncias.</h1>
+        <p style="margin: 0; color: #c9d4e6; font-size: 17px; line-height: 1.65; max-width: 540px;">Soluções estratégicas em comércio exterior, assessoria aduaneira e estruturação de operações internacionais — da prospecção do fornecedor ao desembaraço final.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px;">
+          <a href="https://wa.me/5547984668068" target="_blank" rel="noopener" class="btn-primary" style="background: #d79a3c; color: #0b2240; font-weight: 700; font-size: 15px; padding: 14px 26px; border-radius: 9px; display: inline-flex; align-items: center; gap: 8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17.6 6.3A7.9 7.9 0 0 0 12 4a7.9 7.9 0 0 0-6.9 11.9L4 20l4.2-1.1A7.9 7.9 0 0 0 12 20a7.9 7.9 0 0 0 5.6-13.7Z" stroke="#0b2240" stroke-width="1.5"/><path d="M9.2 9.1c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .5.4.2.5.6 1.5.6 1.6.1.1.1.3 0 .4-.1.2-.1.3-.3.4-.1.2-.3.3-.4.5-.2.1-.3.3-.1.6.2.3.8 1.3 1.8 2.1 1.2 1 2.2 1.3 2.5 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1l1.7.8c.2.1.4.2.4.4.1.2.1 1-.3 1.9-.4.9-2 1.6-2.7 1.6-.7.1-1.5.1-2.4-.1-.5-.2-1.2-.4-2.1-.8-3.6-1.6-5.3-5.2-5.5-5.4-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4Z" fill="#0b2240"/></svg>
+            Falar no WhatsApp
+          </a>
+          <a href="mailto:comercial.lextiamglb@outlook.com" class="btn-ghost glass" style="color: #ffffff; font-weight: 600; font-size: 15px; padding: 14px 26px; border-radius: 9px;">Enviar E-mail</a>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px;">
+          <span style="color: #8fa1c2; font-size: 12px; font-weight: 700; letter-spacing: 0.6px; border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; padding: 6px 14px;">COMÉRCIO INTERNACIONAL</span>
+          <span style="color: #8fa1c2; font-size: 12px; font-weight: 700; letter-spacing: 0.6px; border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; padding: 6px 14px;">IMPORTAÇÃO &amp; EXPORTAÇÃO</span>
+          <span style="color: #8fa1c2; font-size: 12px; font-weight: 700; letter-spacing: 0.6px; border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; padding: 6px 14px;">EXPANSÃO TRADING</span>
+        </div>
+      </div>
+      <div class="hero-logo reveal in" style="display: flex; justify-content: center;">
+        <div class="compass-wrap glass" style="width: 100%; max-width: 340px; aspect-ratio: 1; border-radius: 24px; display: flex; align-items: center; justify-content: center; border-color: rgba(215,154,60,0.35);">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width: 78%; height: 78%;">
+            <circle class="compass-ring" cx="50" cy="50" r="46" fill="none" stroke="#d79a3c" stroke-width="3"/>
+            <circle cx="50" cy="50" r="34" fill="none" stroke="#ffffff" stroke-width="3"/>
+            <g class="compass-needle">
+              <path d="M50 8 L56 44 L50 50 L44 44 Z" fill="#d79a3c"/>
+              <path d="M50 92 L44 56 L50 50 L56 56 Z" fill="#d79a3c"/>
+              <path d="M8 50 L44 44 L50 50 L44 56 Z" fill="#2f7dc4"/>
+              <path d="M92 50 L56 56 L50 50 L56 44 Z" fill="#2f7dc4"/>
+            </g>
+            <circle cx="50" cy="50" r="6" fill="#ffffff"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- marquee -->
+    <div class="glass" style="position: relative; border-left: none; border-right: none; border-bottom: none; padding: 14px 0; overflow: hidden; background: rgba(8,24,46,0.55);">
+      <div class="marquee-track">
+        <div style="display: flex; align-items: center; gap: 36px; padding-right: 36px;">
+          <span style="color: #e7b863; font-weight: 800; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">IMPORTAÇÃO</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+          <span style="color: #c9d4e6; font-weight: 700; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">EXPORTAÇÃO</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+          <span style="color: #e7b863; font-weight: 800; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">LOGÍSTICA INTERNACIONAL</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+          <span style="color: #c9d4e6; font-weight: 700; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">CONSULTORIA ADUANEIRA</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+          <span style="color: #e7b863; font-weight: 800; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">TRADING COMPANY</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 36px; padding-right: 36px;" aria-hidden="true">
+          <span style="color: #e7b863; font-weight: 800; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">IMPORTAÇÃO</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+          <span style="color: #c9d4e6; font-weight: 700; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">EXPORTAÇÃO</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+          <span style="color: #e7b863; font-weight: 800; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">LOGÍSTICA INTERNACIONAL</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+          <span style="color: #c9d4e6; font-weight: 700; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">CONSULTORIA ADUANEIRA</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+          <span style="color: #e7b863; font-weight: 800; font-size: 13.5px; letter-spacing: 1px; white-space: nowrap;">TRADING COMPANY</span>
+          <span style="color: rgba(255,255,255,0.3);">✦</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUEM SOMOS -->
+  <section id="somos" style="width: 100%; background: #f5f7fb; padding: 88px 24px;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div class="reveal" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 48px; max-width: 720px;">
+        <span style="color: #d79a3c; font-weight: 800; font-size: 13px; letter-spacing: 1.4px;">01 · QUEM SOMOS</span>
+        <h2 style="margin: 0; color: #0f2a52; font-size: 34px; font-weight: 800; letter-spacing: -0.3px;">Experiência prática, atendimento estratégico</h2>
+        <p style="margin: 0; color: #5b6b85; font-size: 16px; line-height: 1.6;">Experiência prática e atendimento estratégico para simplificar o comércio exterior.</p>
+      </div>
+
+      <div class="somos-photo-grid reveal" style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; margin-bottom: 40px; align-items: stretch;">
+        <div style="position: relative; border-radius: 18px; overflow: hidden; min-height: 260px;">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aerial_photograph_of_a_cargo_ship.jpg?width=1000" alt="Navio cargueiro em alto mar" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(11,34,64,0.75) 0%, rgba(11,34,64,0.05) 55%);"></div>
+          <div class="glass" style="position: absolute; left: 20px; bottom: 20px; right: 20px; border-radius: 12px; padding: 14px 18px;">
+            <p style="margin: 0; color: #ffffff; font-size: 14px; font-weight: 700; line-height: 1.5;">De porto a porto: acompanhamento real de cada etapa da carga.</p>
+          </div>
+        </div>
+        <div class="card glass" style="background: linear-gradient(145deg, #0f2a52, #16386b); border-radius: 18px; padding: 32px 28px; display: flex; flex-direction: column; justify-content: center; gap: 10px;">
+          <span style="color: #e7b863; font-size: 34px; font-weight: 800;">5+ ANOS</span>
+          <span style="color: #ffffff; font-size: 15px; font-weight: 700;">Experiência Comprovada</span>
+          <span style="color: #c9d4e6; font-size: 13.5px; line-height: 1.6;">Atuação prática no dia a dia de importação, exportação e rotinas aduaneiras.</span>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; align-items: stretch;">
+        <div class="card reveal" style="background: #ffffff; border: 1px solid #e3e8f0; border-radius: 16px; padding: 40px; display: flex; flex-direction: column; gap: 20px; box-shadow: 0 1px 2px rgba(15,42,82,0.04);">
+          <h3 style="margin: 0; color: #0f2a52; font-size: 21px; font-weight: 700;">Nossa História e Visão de Mercado</h3>
+          <p style="margin: 0; color: #46536b; font-size: 15.5px; line-height: 1.7;">A Lextiam Global nasceu da vivência real no comércio exterior e do propósito de tornar as operações internacionais mais acessíveis, seguras e eficientes para empresas de todos os portes.</p>
+          <p style="margin: 0; color: #46536b; font-size: 15.5px; line-height: 1.7;">Com 5 anos de experiência prática e estratégica no setor, compreendemos a fundo cada etapa da cadeia logística, aduaneira e comercial — entregando soluções desenhadas para a necessidade específica de cada cliente.</p>
+          <div style="border-left: 3px solid #d79a3c; background: #fbf2e2; border-radius: 0 10px 10px 0; padding: 18px 22px; margin-top: 4px;">
+            <p style="margin: 0; color: #0f2a52; font-size: 15px; font-weight: 700; line-height: 1.6; font-style: italic;">"Experiência de quem conhece as reais necessidades do seu negócio, unindo agilidade operacional e visão estratégica."</p>
+          </div>
+        </div>
+        <div class="stat-grid reveal reveal-d2" style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+          <div class="card" style="background: #ffffff; border: 1px solid #e3e8f0; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 6px;">
+            <span style="color: #2f7dc4; font-size: 30px; font-weight: 800;">100%</span>
+            <span style="color: #0f2a52; font-size: 14.5px; font-weight: 700;">Foco Sob Medida</span>
+            <span style="color: #5b6b85; font-size: 13.5px; line-height: 1.55;">Diagnóstico individual para cada operação, sem pacotes genéricos.</span>
+          </div>
+          <div class="card" style="background: #ffffff; border: 1px solid #e3e8f0; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 6px;">
+            <span style="color: #2f7dc4; font-size: 30px; font-weight: 800;">VISÃO 360°</span>
+            <span style="color: #0f2a52; font-size: 14.5px; font-weight: 700;">Da Estratégia à Entrega</span>
+            <span style="color: #5b6b85; font-size: 13.5px; line-height: 1.55;">Acompanhamento próximo desde a prospecção até o desembaraço final.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DE MEI A TRADING -->
+  <section style="width: 100%; background: #ffffff; padding: 88px 24px; border-top: 1px solid #e3e8f0;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div class="reveal" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 48px; max-width: 720px;">
+        <span style="color: #d79a3c; font-weight: 800; font-size: 13px; letter-spacing: 1.4px;">02 · VISÃO DE CRESCIMENTO</span>
+        <h2 style="margin: 0; color: #0f2a52; font-size: 34px; font-weight: 800; letter-spacing: -0.3px;">De MEI a Trading: Nosso Projeto de Expansão</h2>
+        <p style="margin: 0; color: #5b6b85; font-size: 16px; line-height: 1.6;">Uma trajetória estruturada com transparência, solidez e foco no crescimento conjunto.</p>
+      </div>
+      <div class="phase-grid reveal" style="display: grid; grid-template-columns: 1fr 64px 1fr; gap: 0; align-items: center;">
+        <div class="card" style="background: #f5f7fb; border: 1px solid #e3e8f0; border-radius: 14px; overflow: hidden; height: 100%;">
+          <div style="background: #2f7dc4; padding: 14px 22px;"><span style="color: #ffffff; font-size: 13px; font-weight: 800; letter-spacing: 0.4px;">FASE 1 — MOMENTO ATUAL</span></div>
+          <div style="padding: 26px 24px; display: flex; flex-direction: column; gap: 14px;">
+            <h3 style="margin: 0; color: #0f2a52; font-size: 19px; font-weight: 700;">Estruturação e Serviços Especializados</h3>
+            <ul style="margin: 0; padding-left: 18px; color: #46536b; font-size: 14.5px; line-height: 1.75;">
+              <li>Atuação ágil e enxuta como MEI, com atendimento direto do especialista.</li>
+              <li>Serviços pontuais e recorrentes de apoio em comércio exterior.</li>
+              <li>Consultoria técnica, prospecção internacional e estudos de viabilidade.</li>
+              <li>Construção de relacionamento sólido e validação das demandas reais dos clientes.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="phase-arrow" style="display: flex; align-items: center; justify-content: center; color: #d79a3c;">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="#d79a3c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="card" style="background: #0f2a52; border-radius: 14px; overflow: hidden; height: 100%;">
+          <div style="background: #d79a3c; padding: 14px 22px;"><span style="color: #0b2240; font-size: 13px; font-weight: 800; letter-spacing: 0.4px;">FASE 2 — PROJETO DE EXPANSÃO</span></div>
+          <div style="padding: 26px 24px; display: flex; flex-direction: column; gap: 14px;">
+            <h3 style="margin: 0; color: #ffffff; font-size: 19px; font-weight: 700;">Consolidação como Trading de Referência</h3>
+            <ul style="margin: 0; padding-left: 18px; color: #c9d4e6; font-size: 14.5px; line-height: 1.75;">
+              <li>Evolução societária e estrutural para operação plena como Trading Company.</li>
+              <li>Importação por Conta e Ordem de Terceiros e por Encomenda.</li>
+              <li>Operações completas de exportação, financiamento e inteligência comercial.</li>
+              <li>Capacidade ampliada para escalar os negócios dos parceiros.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2" style="margin-top: 28px; background: #fbf2e2; border: 1px solid #ecd6a9; border-radius: 12px; padding: 20px 26px; text-align: center;">
+        <p style="margin: 0; color: #7a5518; font-size: 15px; font-weight: 700; line-height: 1.6;">Crescemos junto com nossos clientes: a agilidade e proximidade de hoje preparam o terreno para uma Trading completa, segura e preparada para grandes volumes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" style="width: 100%; background: #f5f7fb; padding: 88px 24px;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div class="reveal" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 48px; max-width: 720px;">
+        <span style="color: #d79a3c; font-weight: 800; font-size: 13px; letter-spacing: 1.4px;">03 · PORTFÓLIO DE SOLUÇÕES</span>
+        <h2 style="margin: 0; color: #0f2a52; font-size: 34px; font-weight: 800; letter-spacing: -0.3px;">O Que Fazemos: Soluções Sob Medida</h2>
+        <p style="margin: 0; color: #5b6b85; font-size: 16px; line-height: 1.6;">Suporte completo em cada etapa da cadeia internacional, adaptado à realidade da sua empresa.</p>
+      </div>
+      <div class="svc-grid reveal" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px;">
+        <div class="card" style="background: #ffffff; border-radius: 14px; border-top: 4px solid #0f2a52; padding: 28px 26px; display: flex; flex-direction: column; gap: 12px;">
+          <span style="background: #f1e4cf; color: #8a5f1c; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 6px; align-self: flex-start;">01</span>
+          <h3 style="margin: 0; color: #0f2a52; font-size: 17.5px; font-weight: 700; line-height: 1.3;">Assessoria em Importação e Exportação</h3>
+          <p style="margin: 0; color: #5b6b85; font-size: 14.5px; line-height: 1.6;">Planejamento operacional, análise documental e acompanhamento ponta a ponta de todas as etapas do processo internacional.</p>
+        </div>
+        <div class="card" style="background: #ffffff; border-radius: 14px; border-top: 4px solid #d79a3c; padding: 28px 26px; display: flex; flex-direction: column; gap: 12px;">
+          <span style="background: #f1e4cf; color: #8a5f1c; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 6px; align-self: flex-start;">02</span>
+          <h3 style="margin: 0; color: #0f2a52; font-size: 17.5px; font-weight: 700; line-height: 1.3;">Prospecção de Fornecedores e Parceiros</h3>
+          <p style="margin: 0; color: #5b6b85; font-size: 14.5px; line-height: 1.6;">Busca ativa, homologação e negociação com fornecedores e compradores globais confiáveis para reduzir riscos.</p>
+        </div>
+        <div class="card" style="background: #ffffff; border-radius: 14px; border-top: 4px solid #0f2a52; padding: 28px 26px; display: flex; flex-direction: column; gap: 12px;">
+          <span style="background: #f1e4cf; color: #8a5f1c; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 6px; align-self: flex-start;">03</span>
+          <h3 style="margin: 0; color: #0f2a52; font-size: 17.5px; font-weight: 700; line-height: 1.3;">Estudo de Viabilidade Econômica</h3>
+          <p style="margin: 0; color: #5b6b85; font-size: 14.5px; line-height: 1.6;">Simulação detalhada de custos tributários, logísticos e cambiais para garantir previsibilidade e margem de lucro.</p>
+        </div>
+        <div class="card" style="background: #ffffff; border-radius: 14px; border-top: 4px solid #2f7dc4; padding: 28px 26px; display: flex; flex-direction: column; gap: 12px;">
+          <span style="background: #f1e4cf; color: #8a5f1c; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 6px; align-self: flex-start;">04</span>
+          <h3 style="margin: 0; color: #0f2a52; font-size: 17.5px; font-weight: 700; line-height: 1.3;">Coordenação Logística Internacional</h3>
+          <p style="margin: 0; color: #5b6b85; font-size: 14.5px; line-height: 1.6;">Gestão de fretes marítimos, aéreos e rodoviários, contratação de seguro e monitoramento de cargas até o destino.</p>
+        </div>
+        <div class="card" style="background: #ffffff; border-radius: 14px; border-top: 4px solid #0f2a52; padding: 28px 26px; display: flex; flex-direction: column; gap: 12px;">
+          <span style="background: #f1e4cf; color: #8a5f1c; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 6px; align-self: flex-start;">05</span>
+          <h3 style="margin: 0; color: #0f2a52; font-size: 17.5px; font-weight: 700; line-height: 1.3;">Consultoria Aduaneira e Fiscal</h3>
+          <p style="margin: 0; color: #5b6b85; font-size: 14.5px; line-height: 1.6;">Classificação fiscal (NCM), adequação às normas regulatórias e identificação de benefícios para otimização tributária.</p>
+        </div>
+        <div class="card" style="position: relative; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; justify-content: center; min-height: 200px;">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/2017_Paul_D._Conley_Container_Terminal_container_cranes_from_Boston_Harbor_1.jpg?width=900" alt="Terminal de contêineres" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(160deg, rgba(15,42,82,0.92), rgba(15,42,82,0.75));"></div>
+          <div class="glass" style="position: relative; margin: 20px; border-radius: 10px; padding: 20px 22px; display: flex; flex-direction: column; gap: 10px;">
+            <h3 style="margin: 0; color: #ffffff; font-size: 17.5px; font-weight: 700; line-height: 1.3;">Precisa de algo sob medida?</h3>
+            <p style="margin: 0; color: #e3e9f5; font-size: 14.5px; line-height: 1.6;">Fale com a gente e desenhamos a solução certa para a sua operação.</p>
+            <a href="#contato" style="margin-top: 2px; color: #e7b863; font-weight: 700; font-size: 14.5px; display: inline-flex; align-items: center; gap: 6px;">Entrar em contato →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section id="diferenciais" style="width: 100%; background: #ffffff; padding: 88px 24px; border-top: 1px solid #e3e8f0;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div class="reveal" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 48px; max-width: 760px;">
+        <span style="color: #d79a3c; font-weight: 800; font-size: 13px; letter-spacing: 1.4px;">04 · PROPOSTA DE VALOR</span>
+        <h2 style="margin: 0; color: #0f2a52; font-size: 34px; font-weight: 800; letter-spacing: -0.3px;">Por Que Escolher a Lextiam Global?</h2>
+        <p style="margin: 0; color: #5b6b85; font-size: 16px; line-height: 1.6;">Diferenciais competitivos que transformam complexidade aduaneira em vantagem para o seu negócio.</p>
+      </div>
+      <div class="diff-grid reveal" style="display: grid; grid-template-columns: 0.9fr 1.4fr; gap: 28px; align-items: stretch;">
+        <div style="background: #0f2a52; border-radius: 16px; padding: 40px 34px; display: flex; flex-direction: column; gap: 18px; justify-content: center;">
+          <h3 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 800; line-height: 1.25;">Compromisso com Resultado</h3>
+          <p style="margin: 0; color: #c9d4e6; font-size: 15px; line-height: 1.7;">No comércio exterior, um detalhe documental ou tributário define o sucesso da operação. Na Lextiam Global, você conta com acompanhamento próximo de quem já resolveu desafios reais na linha de frente.</p>
+          <div style="border: 1px solid rgba(215,154,60,0.4); border-radius: 10px; padding: 16px 18px; margin-top: 6px;">
+            <p style="margin: 0; color: #e7b863; font-size: 14.5px; font-weight: 700; line-height: 1.5;">Mais previsibilidade, menos riscos e total transparência em cada etapa.</p>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div class="card" style="background: #f5f7fb; border: 1px solid #e3e8f0; border-left: 4px solid #d79a3c; border-radius: 10px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start;">
+            <div style="width: 26px; height: 26px; border-radius: 999px; background: #0f2a52; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#e7b863" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4 style="margin: 0 0 4px; color: #0f2a52; font-size: 15.5px; font-weight: 700;">5 Anos de Experiência Prática</h4><p style="margin: 0; color: #5b6b85; font-size: 14px; line-height: 1.55;">Bagagem sólida na rotina operacional do comércio exterior, antecipando gargalos antes que gerem custos extras.</p></div>
+          </div>
+          <div class="card" style="background: #f5f7fb; border: 1px solid #e3e8f0; border-left: 4px solid #2f7dc4; border-radius: 10px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start;">
+            <div style="width: 26px; height: 26px; border-radius: 999px; background: #0f2a52; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#e7b863" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4 style="margin: 0 0 4px; color: #0f2a52; font-size: 15.5px; font-weight: 700;">Atendimento Realmente Customizado</h4><p style="margin: 0; color: #5b6b85; font-size: 14px; line-height: 1.55;">Escuta ativa para entender o modelo de negócio de cada cliente, desenhando fluxos sob medida sem soluções engessadas.</p></div>
+          </div>
+          <div class="card" style="background: #f5f7fb; border: 1px solid #e3e8f0; border-left: 4px solid #d79a3c; border-radius: 10px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start;">
+            <div style="width: 26px; height: 26px; border-radius: 999px; background: #0f2a52; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#e7b863" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4 style="margin: 0 0 4px; color: #0f2a52; font-size: 15.5px; font-weight: 700;">Agilidade e Redução de Custos</h4><p style="margin: 0; color: #5b6b85; font-size: 14px; line-height: 1.55;">Estrutura enxuta e processos diretos que eliminam burocracias desnecessárias, economizando tempo e recursos.</p></div>
+          </div>
+          <div class="card" style="background: #f5f7fb; border: 1px solid #e3e8f0; border-left: 4px solid #2f7dc4; border-radius: 10px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start;">
+            <div style="width: 26px; height: 26px; border-radius: 999px; background: #0f2a52; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#e7b863" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4 style="margin: 0 0 4px; color: #0f2a52; font-size: 15.5px; font-weight: 700;">Segurança Jurídica e Conformidade</h4><p style="margin: 0; color: #5b6b85; font-size: 14px; line-height: 1.55;">Rigor técnico na análise documental e tributária, garantindo operações 100% aderentes à legislação vigente.</p></div>
+          </div>
+          <div class="card" style="background: #f5f7fb; border: 1px solid #e3e8f0; border-left: 4px solid #d79a3c; border-radius: 10px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start;">
+            <div style="width: 26px; height: 26px; border-radius: 999px; background: #0f2a52; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="#e7b863" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4 style="margin: 0 0 4px; color: #0f2a52; font-size: 15.5px; font-weight: 700;">Visão de Parceria de Longo Prazo</h4><p style="margin: 0; color: #5b6b85; font-size: 14px; line-height: 1.55;">Atuamos como o braço internacional da sua empresa, comprometidos com o resultado sustentável de cada embarque.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUTURO -->
+  <section id="futuro" style="width: 100%; position: relative; overflow: hidden; background: #0b2240; padding: 88px 24px;">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/MOL_Majesty_%28ship%2C_2009%29_001.jpg?width=1600" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(11,34,64,0.95) 0%, rgba(14,39,72,0.9) 100%);"></div>
+    <div style="position: relative; max-width: 1180px; margin: 0 auto;">
+      <div class="reveal" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; max-width: 720px;">
+        <span style="color: #e7b863; font-weight: 800; font-size: 13px; letter-spacing: 1.4px;">05 · PROPÓSITO E FUTURO</span>
+        <h2 style="margin: 0; color: #ffffff; font-size: 34px; font-weight: 800; letter-spacing: -0.3px;">Nosso Compromisso com o Futuro</h2>
+        <p style="margin: 0; color: #a9bad9; font-size: 16px; line-height: 1.6;">Construindo hoje a ponte sólida que conectará sua empresa aos principais mercados globais.</p>
+      </div>
+      <div class="glass reveal reveal-d1" style="border-left: 4px solid #d79a3c; border-radius: 14px; padding: 34px 38px; margin-bottom: 28px;">
+        <h3 style="margin: 0 0 14px; color: #e7b863; font-size: 19px; font-weight: 800;">Rumo ao Mercado Global</h3>
+        <p style="margin: 0; color: #c9d4e6; font-size: 15.5px; line-height: 1.75;">Acreditamos que o comércio internacional deve ser acessível, transparente e descomplicado. Estamos estruturando a Lextiam Global para ser a sua ponte definitiva com o mundo — unindo a agilidade e atenção personalizada de hoje com a robustez operacional de uma futura grande Trading Company.</p>
+      </div>
+      <div class="future-grid reveal reveal-d2" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-bottom: 28px;">
+        <div class="glass card" style="border-radius: 12px; padding: 24px 24px;">
+          <span style="color: #d79a3c; font-size: 12px; font-weight: 800; letter-spacing: 0.8px;">ACESSIBILIDADE</span>
+          <h4 style="margin: 10px 0 8px; color: #ffffff; font-size: 16.5px; font-weight: 700;">Descomplicar Processos</h4>
+          <p style="margin: 0; color: #a9bad9; font-size: 14px; line-height: 1.6;">Traduzir a complexidade aduaneira e logística em decisões claras e seguras para o empresário.</p>
+        </div>
+        <div class="glass card" style="border-radius: 12px; padding: 24px 24px;">
+          <span style="color: #d79a3c; font-size: 12px; font-weight: 800; letter-spacing: 0.8px;">CONFIANÇA</span>
+          <h4 style="margin: 10px 0 8px; color: #ffffff; font-size: 16.5px; font-weight: 700;">Relações Transparentes</h4>
+          <p style="margin: 0; color: #a9bad9; font-size: 14px; line-height: 1.6;">Clareza total sobre custos, prazos e etapas desde o primeiro contato até a conclusão da operação.</p>
+        </div>
+        <div class="glass card" style="border-radius: 12px; padding: 24px 24px;">
+          <span style="color: #d79a3c; font-size: 12px; font-weight: 800; letter-spacing: 0.8px;">ESCALABILIDADE</span>
+          <h4 style="margin: 10px 0 8px; color: #ffffff; font-size: 16.5px; font-weight: 700;">Crescimento Sustentável</h4>
+          <p style="margin: 0; color: #a9bad9; font-size: 14px; line-height: 1.6;">Evoluir continuamente nossa estrutura para atender demandas crescentes em importação e exportação.</p>
+        </div>
+      </div>
+      <div class="glass reveal reveal-d3" style="text-align: center; padding: 22px; border-radius: 12px;">
+        <p style="margin: 0; color: #e7b863; font-size: 17px; font-weight: 700; font-style: italic;">"Onde há um mercado a ser explorado, a Lextiam Global abre o caminho."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" style="width: 100%; background: #f5f7fb; padding: 88px 24px;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div class="contact-grid reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <span style="color: #d79a3c; font-weight: 800; font-size: 13px; letter-spacing: 1.4px;">PRÓXIMO PASSO</span>
+          <h2 style="margin: 0; color: #0f2a52; font-size: 36px; font-weight: 800; line-height: 1.2; letter-spacing: -0.3px;">Vamos Conectar o Seu Negócio ao Mundo?</h2>
+          <p style="margin: 0; color: #5b6b85; font-size: 16px; line-height: 1.65; max-width: 460px;">Entre em contato para conversarmos sobre as necessidades da sua operação e desenharmos a melhor solução.</p>
+        </div>
+        <div class="card" style="background: #ffffff; border: 1px solid #e3e8f0; border-radius: 16px; padding: 36px 38px; display: flex; flex-direction: column; gap: 20px;">
+          <div>
+            <span style="color: #d79a3c; font-size: 11.5px; font-weight: 800; letter-spacing: 0.8px;">RESPONSÁVEL</span>
+            <p style="margin: 4px 0 0; color: #0f2a52; font-size: 15.5px; font-weight: 700;">Letícia Souza e William Alves</p>
+            <p style="margin: 2px 0 0; color: #5b6b85; font-size: 13.5px;">Fundadores &amp; Especialistas em Comércio Exterior</p>
+          </div>
+          <div style="height: 1px; background: #e3e8f0;"></div>
+          <div>
+            <span style="color: #d79a3c; font-size: 11.5px; font-weight: 800; letter-spacing: 0.8px;">E-MAIL CORPORATIVO</span>
+            <p style="margin: 4px 0 0;"><a class="lnk" href="mailto:comercial.lextiamglb@outlook.com" style="font-size: 15.5px; font-weight: 700;">comercial.lextiamglb@outlook.com</a></p>
+          </div>
+          <div style="height: 1px; background: #e3e8f0;"></div>
+          <div>
+            <span style="color: #d79a3c; font-size: 11.5px; font-weight: 800; letter-spacing: 0.8px;">TELEFONE / WHATSAPP</span>
+            <p style="margin: 4px 0 0;"><a class="lnk" href="https://wa.me/5547984668068" target="_blank" rel="noopener" style="font-size: 15.5px; font-weight: 700;">+55 (47) 98466-8068</a></p>
+          </div>
+          <div style="height: 1px; background: #e3e8f0;"></div>
+          <div>
+            <span style="color: #d79a3c; font-size: 11.5px; font-weight: 800; letter-spacing: 0.8px;">LOCALIZAÇÃO &amp; ATUAÇÃO</span>
+            <p style="margin: 4px 0 0; color: #0f2a52; font-size: 15px; font-weight: 700; line-height: 1.5;">Itajaí / SC · Atendimento Nacional e Internacional<br><span style="color: #5b6b85; font-weight: 500;">Rua Uruguai, 122, Sala 03, Box 250 - Centro.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="width: 100%; background: #0b2240; padding: 36px 24px;">
+    <div class="footer-grid" style="max-width: 1180px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width: 30px; height: 30px; flex-shrink: 0;">
+          <circle cx="50" cy="50" r="46" fill="none" stroke="#d79a3c" stroke-width="3"/>
+          <circle cx="50" cy="50" r="34" fill="none" stroke="#ffffff" stroke-width="3"/>
+          <path d="M50 8 L56 44 L50 50 L44 44 Z" fill="#d79a3c"/>
+          <path d="M50 92 L44 56 L50 50 L56 56 Z" fill="#d79a3c"/>
+          <path d="M8 50 L44 44 L50 50 L44 56 Z" fill="#2f7dc4"/>
+          <path d="M92 50 L56 56 L50 50 L56 44 Z" fill="#2f7dc4"/>
+          <circle cx="50" cy="50" r="6" fill="#ffffff"/>
+        </svg>
+        <span style="color: #c9d4e6; font-size: 13.5px;">Lextiam Global — Conectando mercados, encurtando distâncias.</span>
+      </div>
+      <span style="color: #6b7f9f; font-size: 12.5px;">Itajaí / SC · Comércio Exterior, Assessoria Aduaneira e Trading</span>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal:not(.in)');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
